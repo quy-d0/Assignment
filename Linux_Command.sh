@@ -4,8 +4,6 @@
 
 #1. Start with #!/bin/bash 
 
-#!/bin/bash 
-
 #2. Make the bash file executable 
 chmod u+x filename.sh
 
@@ -15,31 +13,42 @@ chmod u+x filename.sh
 #4. Echo - command prints out text/value of variables
 hello = xinchao
 echo $hello
+unset #delete variables
 
 echo $(date)
 echo 'date'
 files = $(ls)
 echo $files
 
-#5. cat command is used to display contents of a document.
-cat -n #add number
+#5. Common commands
+
+cat -n #display contents of a document -add number
 date >> #double the lines
-sort -o 
+sort -u # sort -eliminate duplicates
 grep #print line that match patterns 
+mkdir name #create directory if it does not exsit 
+apropos keywords #search fro keywords in index databse
+cp #copy
+mv abc.txt cbc.txt #mv: move
+rm txt.txt #remove file
+rm -r temp #remove folder/directory
+<< # a here documents, it allows displaying of content of what comes next
+head -n 15 # read the first 15 lines
+tai -n 10
+wc filename.txt #count workds in the files 
+split -l 2 filename.txt resutl.txt #split 2 line of each file from filename.txt and name the new file as result.txt
+cut -f 1, 3, -d "-"
 
-#6. << is called a here documents, it allows displaying of content of what comes next
-
-#
-# Loop - while .. do .. done
+# 6. Loop - while .. do .. done
 #!/bin/bash
 while [ −n ”$1 ” ] ; do
   echo $1
   shift
 done
+
 # Loop - until .. do .. done
 # Loop - for...in...do...done
 # case .. in .. esac
-
 for i in $(ls ∗$1); do
   echo "Backup $i? yES/nO/qUIT"
   read answer
